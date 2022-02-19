@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QSystemTrayIcon, QMenu
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 
 class MainUI(QWidget):
     def __init__(self, parent=None, **kwargs) -> None:
@@ -20,15 +21,55 @@ class MainUI(QWidget):
         self.setMinimumSize(screenRect.width() // 4, screenRect.height() // 4)
         # Set the window flags
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
-        # self.setWindowFlags(Qt.WindowCloseButtonHint)
+
+        # All the window flags
+        # self.setWindowFlags(Qt.FramelessWindowHint)
+        # self.setWindowFlags(Qt.WindowMinimizeButtonHint)
+        # self.setWindowFlags(Qt.WindowMaximizeButtonHint)
+        # self.setWindowFlags(Qt.WindowSystemMenuHint)
+        # self.setWindowFlags(Qt.WindowTitleHint)
+        # self.setWindowFlags(Qt.WindowFullscreenButtonHint)
+        # self.setWindowFlags(Qt.WindowContextHelpButtonHint)
+        # self.setWindowFlags(Qt.WindowShadeButtonHint)
+        # self.setWindowFlags(Qt.WindowStaysOnBottomHint)
+        # self.setWindowFlags(Qt.WindowMinimizeButtonHint)
+        # self.setWindowFlags(Qt.WindowMaximizeButtonHint)
+        # self.setWindowFlags(Qt.WindowSystemMenuHint)
+        # self.setWindowFlags(Qt.WindowTitleHint)
+        # self.setWindowFlags(Qt.WindowFullscreenButtonHint)
+        # self.setWindowFlags(Qt.WindowContextHelpButtonHint)
+        # self.setWindowFlags(Qt.WindowShadeButtonHint)
+        # self.setWindowFlags(Qt.WindowStaysOnBottomHint)
+        # self.setWindowFlags(Qt.WindowMinimizeButtonHint)
+        # self.setWindowFlags(Qt.WindowMaximizeButtonHint)
+        # self.setWindowFlags(Qt.WindowSystemMenuHint)
+        # self.setWindowFlags(Qt.WindowTitleHint)
+        # self.setWindowFlags(Qt.WindowFullscreenButtonHint)
+        # self.setWindowFlags(Qt.WindowContextHelpButtonHint)
+        # self.setWindowFlags(Qt.WindowShadeButtonHint)
+        # self.setWindowFlags(Qt.WindowStaysOnBottomHint)
+        # self.setWindowFlags(Qt.WindowMinimizeButtonHint)
+        # self.setWindowFlags(Qt.WindowMaximizeButtonHint)
         # Initialize the widgets
         self.initWidgets()
         # Show the window
         self.show()
     
     def initWidgets(self):
-        self.btn = QPushButton('Quit', self)
-        self.btn.setGeometry(self.width() // 2 - self.btn.width() // 2, self.height() // 2 - self.btn.height() // 2, self.btn.width(), self.btn.height())
+        self.sys_tray = QSystemTrayIcon(self)
+        self.sys_tray.setIcon(QIcon('./images/icon.png'))
+        self.sys_tray.setVisible(True)
+        # Left Clicking the system tray icon will show the window
+        self.sys_tray.activated.connect(self.show)
+
+
+
+    # Override the closeEvent method
+    def closeEvent(self, a0) -> None:
+        # Close button will minimize the to the system tray
+        self.hide()
+        a0.ignore()
+        self.sys_tray.showMessage('Minimized to system tray', 'The window is now minimized to the system tray', QSystemTrayIcon.Information)
         
 
 def main():
