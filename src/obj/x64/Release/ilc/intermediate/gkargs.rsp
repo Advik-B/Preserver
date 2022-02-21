@@ -1,0 +1,7 @@
+﻿"E:\GitHub-Repos\Preserver\src\Preserver\obj\x64\Release\ilc\in\Preserver.exe"
+/Lib:"E:\GitHub-Repos\Preserver\src\Preserver\obj\x64\Release\ilc\in"
+/Lib:"C:\Users\Advik\.nuget\packages\runtime.win10-x64.microsoft.net.native.compiler\2.2.10-rel-29722-00\tools\x64\ilc\lib\Private"
+/WinMD:"E:\GitHub-Repos\Preserver\src\Preserver\obj\x64\Release\ilc\in\WinMetadata\Windows.winmd"
+/VSTelemetrySessionSettings:"{\"IsOptedIn\":true,\"HostName\":\"Dev14\",\"AppInsightsInstrumentationKey\":\"f144292e-e3b2-4011-ac90-20e5c03fbce5\",\"AsimovInstrumentationKey\":\"AIF-312cbd79-9dbb-4c48-a7da-3cc2a931cb70\",\"AppId\":1001,\"UserId\":\"d83c665b-48d3-4d2e-a13b-90d179125a02\",\"Id\":\"591e4014-c504-4140-956e-ae6433e65e54\",\"ProcessStartTime\":637810315645259166}"
+/RdXmlPath:"C:\Users\Advik\.nuget\packages\microsoft.net.native.compiler\2.2.10-rel-29722-00\tools\LibraryXML"
+/RunOnlyPreDR
